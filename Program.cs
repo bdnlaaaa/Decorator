@@ -1,0 +1,10 @@
+﻿using Decorator;
+Coffee coffee1 = new ColdBrew();
+coffee1 = new Iced(coffee1);
+Console.WriteLine(coffee1.Name);
+Coffee coffee2 = new Espresso();
+coffee2 = new AddMilk(coffee2);
+Console.WriteLine(coffee2.Name);
+Coffee coffee3 = new ColdBrew();
+coffee3 = new AddMilk(new Iced(coffee3));
+Console.WriteLine(coffee3.Name);
